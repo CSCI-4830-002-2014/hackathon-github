@@ -66,7 +66,7 @@ sourcetype="course_events_data" type="IssueCommentEvent" | stats count by actor.
 
 {{ write-one-or-two-sentences-to-discuss-the-answer}}
 
-### Question 3. {{write-the-question}}
+### Question 3. When are most people starting their homework(forking)?
 ```
 sourcetype="big_data_events" type="ForkEvent" | timechart count by actor.login
 ```
