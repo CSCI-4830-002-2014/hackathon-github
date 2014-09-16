@@ -7,20 +7,30 @@ var github = new GitHubApi({
     // optional
     timeout: 5000
 });
+
+github.authenticate({
+    type: "basic",
+    username: "peymanmortazavi",
+    password: "-"
+});
  
 function getForksForChallengeWeek(i, callback) {
 	github.events.getFromOrg({
 	    org: "CSCI-4830-002-2014",
-	    per_page: 99,
+	    per_page: 30,
 	    page: i
 	}, callback);
 };
  
 // [ [a,a,a], [b,b,b], ... ] -> [a,a,a,b,b,b, ... ]
 function flatten_slow(input){	
-    return input.reduce(function(a, b) {
-    	return a.concat(b);
-	}, []);
+    var flattened=[];
+    for (var i=0; i<input.length; ++i) {
+        var current = input[i];
+        for (var j=0; j< current.length; ++j)
+            flattened.push(current[j]);
+    }
+    return flattened;
 }
  
 async.map([1,2,3,4,5,6,7,8,9,10,11,12], getForksForChallengeWeek, function(err, results){
