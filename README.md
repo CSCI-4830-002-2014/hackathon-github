@@ -45,7 +45,7 @@ sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload
 ```
 {{splunk query producing the table or graph below}}
 ```
-![screenshot of a data table or a graph or both](2f.png?raw=true) 
+![screenshot of a data table or a graph or both](image.png?raw=true) 
 
 
 # Objective 3. Analzye Week 3
@@ -68,8 +68,8 @@ sourcetype="course_events_data" type="IssueCommentEvent" | stats count by actor.
 
 ### Question 3. {{write-the-question}}
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="big_data_events" type="ForkEvent" | timechart count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![Image](A3.png?raw=true) 
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+This data shows when most people start on their homework and will be interesting if referenced against the due dates.
