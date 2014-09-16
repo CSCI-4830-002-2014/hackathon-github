@@ -58,7 +58,7 @@ sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload
 
 {{ write-one-or-two-sentences-to-discuss-the-answer}}
 
-### Question 2. {{write-the-question}}
+### Question 2. Who was the most active in commenting?
 ```
 sourcetype="course_events_data" type="IssueCommentEvent" | stats count by actor.login
 ```
