@@ -50,11 +50,11 @@ sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload
 
 # Objective 3. Analzye Week 3
 
-### Question 1. {{write-the-question}}
+### Question 1.  Who creates the most IssueEvents total?
 ```
-{{splunk query producing the table or graph below}}
+{{sourcetype="github_hackathon_events" type="IssuesEvent" | top actor.login }}
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](question1.png?raw=true) 
 
 {{ write-one-or-two-sentences-to-discuss-the-answer}}
 
