@@ -56,9 +56,9 @@ sourcetype=hackathon_github_events | top limit=5 id
 ```
 ![screenshot of a data table or a graph or both](http://i.imgur.com/6JLjB3l.png) 
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
 
-+### Question 2. {{List the Avatar URL of people who have made pull requests}}
+
+### Question 2. List the Avatar URL of people who have made pull requests
 
 ```
 sourcetype=hackathon type=PullRequestEvent | top actor.avatar_url
