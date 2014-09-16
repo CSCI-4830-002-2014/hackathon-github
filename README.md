@@ -61,12 +61,12 @@ sourcetype=new_github repo.name="CSCI-4830-002-2014/challenge-week-3" type="Fork
 ```
 ![screenshot of a data table or a graph or both](obj3b.png?raw=true) 
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+As a result of most forks coming near the end of the deadline, many subsequent pull requests were made hours or minutes before the assignment was due.
 
-### Question 3. {{write-the-question}}
+### Question 3. Who contributed the most to the issues page on the week 3 challenge?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=new_github repo.name="CSCI-4830-002-2014/challenge-week-3" type="IssuesEvent" | timechart count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](obj3c.png?raw=true) 
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+It's obvious that Tom Yeh, the professor, was a large driving force in the online discussions. Additionally, Alexia Newgord participated greatly. 
