@@ -58,13 +58,14 @@ sourcetype=hackathon_github_events | top limit=5 id
 
 {{ write-one-or-two-sentences-to-discuss-the-answer}}
 
-### Question 2. {{write-the-question}}
-```
-{{splunk query producing the table or graph below}}
-```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
++### Question 2. {{List the Avatar URL of people who have made pull requests}}
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+```
+sourcetype=hackathon type=PullRequestEvent | top actor.avatar_url
+```
+![screenshot of a data table or a graph or both](challenge3b.png?raw=true) 
+
+{{ This shows people's pictures, which is useful if we wanted to put their picture next to data.}}
 
 ### Question 3. What were the top event types?
 ```
