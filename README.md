@@ -14,16 +14,15 @@
 
 ### 2.a. What is the distribution of push requests over Github accounts?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=hackaton_events type=PushEvent | stats count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](challenge2a.png?raw=true) 
 
 ### 2.b. How are different event types compared over time for the whole class?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=hackaton_events | timechart count by type
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
-
+![screenshot of a data table or a graph or both](challenge2b.png?raw=true)
 ### 2.c. Who had the most number of pull request events?
 ```
 sourcetype=hackathon_github_events type=PullRequestEvent | top actor.login
@@ -38,15 +37,15 @@ sourcetype=hackathon_github_events type=PullRequestEvent | top payload.action
 
 ### 2.e. What is the distribution of opened pull requests over Github accounts?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=hackaton_events type="PullRequest*" payload.pull_request.state=open | stats count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](challenge2e.png?raw=true) 
 
 ### 2.f. What is the submission pattern (i.e., pull requests) of the "Week 2 challenge" over time?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=hackaton_events type="PullRequest*" repo.name="CSCI-4830-002-2014/challenge-week-2" | timechart count
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](challenge2f.png?raw=true) 
 
 
 # Objective 3. Analzye Week 3
