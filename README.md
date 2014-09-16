@@ -2,7 +2,6 @@
 
 * [Josh Ferge](https://github.com/JoshFerge)
 * [Irfan Nadiadi](https://github.com/Irfann1)
-* [Justin McBride](https://github.com/dare599z)
 * [Michael Fyk](https://github.com/thefyk)
 * [LoganBates](https://github.com/LoganBates)
 
