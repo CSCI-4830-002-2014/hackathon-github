@@ -55,11 +55,11 @@ sourcetype=new_github repo.name="CSCI-4830-002-2014/challenge-week-3" type="Fork
 
 {{ While a few students fork the repository early in the week, a majority seem to wait until the day prior to it being due to start the assignment. }}
 
-### Question 2. {{write-the-question}}
+### Question 2. After they forked, when did most students complete and turn in the assignment?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=new_github repo.name="CSCI-4830-002-2014/challenge-week-3" type="ForkEvent" | timechart count
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](obj3b.png?raw=true) 
 
 {{ write-one-or-two-sentences-to-discuss-the-answer}}
 
