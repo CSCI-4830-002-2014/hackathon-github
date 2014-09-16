@@ -60,9 +60,9 @@ sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload
 
 ### Question 2. {{write-the-question}}
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_events_data" type="IssueCommentEvent" | stats count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![Image](https://dl.dropboxusercontent.com/u/44502811/Big%20Data%20ScreenShots/Hack%203/3a.png) 
 
 {{ write-one-or-two-sentences-to-discuss-the-answer}}
 
