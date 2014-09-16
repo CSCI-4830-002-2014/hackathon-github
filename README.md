@@ -3,7 +3,7 @@
 * [Peyman Mortazavi](https://github.com/peymanmortazavi)
 * [Brian Newsom](https://github.com/BrianNewsom)
 * [Adrian Chen](https://github.com/adrian-chen)
-* [Sam Korn](https://github.com/sako0938)
+* [Sam ](https://github.com/sako0938)
 
 # Objective 1. Node.js
 
@@ -37,9 +37,9 @@ sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload
 
 ### 2.e. What is the distribution of opened pull requests over Github accounts?
 ```
-{{splunk query producing the table or graph below}}
+{{sourcetype="github_hackathon_events" type="PullRequestEvent" | stats count by actor.login }}
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](challengee.png?raw=true) 
 
 ### 2.f. What is the submission pattern (i.e., pull requests) of the "Week 2 challenge" over time?
 ```
