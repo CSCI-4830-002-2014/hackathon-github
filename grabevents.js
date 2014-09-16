@@ -13,21 +13,8 @@ function getClassEventsForPage(i, callback){
 	}, callback);
 };
  
-// [ [a,a,a], [b,b,b], ... ] -> [a,a,a,b,b,b, ... ]
-/*
-var flattened=[];
-for (var i=0; i<input.length; ++i) {
-    var current = input[i];
-    for (var j=0; j<current.length; ++j)
-        flattened.push(current[j]);
-}
-*/
-function flatten_slow(input){
-/*	
-    return input.reduce(function(a, b) {
-    	return a.concat(b);
-	}, []);
-*/
+function flatten_fast(input){
+
 var flattened=[];
 	for (var i=0; i<input.length; ++i) {
 	    var current = input[i];
@@ -38,6 +25,6 @@ var flattened=[];
 }
  
 async.map([1,2,3,4,5,6,7,8,9,10], getClassEventsForPage, function(err, results){
-	flattened = flatten_slow(results);    
+	flattened = flatten_fast(results);    
 	console.log(JSON.stringify(flattened, undefined, 4));
 });
