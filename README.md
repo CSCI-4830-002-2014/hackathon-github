@@ -59,13 +59,13 @@ sourcetype=hackaton_events type="PullRequest*" repo.name="CSCI-4830-002-2014/cha
 
 {{ write-one-or-two-sentences-to-discuss-the-answer}}
 
-### Question 2. {{write-the-question}}
+### Question 2. {{List the Avatar URL of people who have made pull requests}}
 ```
-{{splunk query producing the table or graph below}}
+{{sourcetype=hackathon type=PullRequestEvent | top actor.avatar_url}}
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](challenge3b.png?raw=true) 
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+{{ This shows people's pictures, which is useful if we wanted to put their picture next to data.}}
 
 ### Question 3. {{write-the-question}}
 ```
