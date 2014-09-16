@@ -1,10 +1,9 @@
 # Team Members
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Peyman Mortazavi](https://github.com/peymanmortazavi)
+* [Brian Newsom](https://github.com/BrianNewsom)
+* [Adrian Chen](https://github.com/adrian-chen)
+* [Sam ](https://github.com/sako0938)
 
 # Objective 1. Node.js
 
