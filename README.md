@@ -26,15 +26,21 @@
 
 ### 2.c. Who had the most number of pull request events?
 ```
+<<<<<<< HEAD
 {{sourcetype=hackaton_events type=PullRequestEvent | top limit=1 actor.login}}
 ```
 ![screenshot of a data table or a graph or both](challenge2c.png?raw=true) 
+=======
+sourcetype=hackathon_github_events type=PullRequestEvent | top actor.login
+```
+![screenshot of a data table or a graph or both](http://i.imgur.com/XAykT6a.png) 
+>>>>>>> 8580b8b0b2642da960f297f7f2b4b2504dee2897
 
 ### 2.d. How many different kinds of pull request actions were made?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=hackathon_github_events type=PullRequestEvent | top payload.action
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](http://i.imgur.com/MXAM0Xs.png) 
 
 ### 2.e. What is the distribution of opened pull requests over Github accounts?
 ```
