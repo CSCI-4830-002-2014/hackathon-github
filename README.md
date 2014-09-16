@@ -8,7 +8,7 @@
 
 # Objective 1. Node.js
 
-[grabevents.js](grabevents.js)
+[getevents.js](getevents.js)
 
 # Objective 2. Reanalyze
 
@@ -26,15 +26,15 @@
 
 ### 2.c. Who had the most number of pull request events?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_events_data" type="PullRequestEvent" | stats count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![Image](https://dl.dropboxusercontent.com/u/44502811/Big%20Data%20ScreenShots/Hack%203/c.png) 
 
 ### 2.d. How many different kinds of pull request actions were made?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload.action
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![Image](https://dl.dropboxusercontent.com/u/44502811/Big%20Data%20ScreenShots/Hack%203/d.png) 
 
 ### 2.e. What is the distribution of opened pull requests over Github accounts?
 ```
