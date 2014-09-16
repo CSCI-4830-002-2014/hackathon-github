@@ -45,7 +45,7 @@ sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload
 ```
 {{splunk query producing the table or graph below}}
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](2f.png?raw=true) 
 
 
 # Objective 3. Analzye Week 3
