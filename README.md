@@ -50,26 +50,27 @@ sourcetype="course_github_events" type="PullRequestEvent" repo.name="CSCI-4830-0
 
 # Objective 3. Analzye Week 3
 
-### Question 1. {{write-the-question}}
+### Question 1. Who forked from the project-1-make-a after it was already due?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=class_github_events type="ForkEvent" repo.name="CSCI-4830-002-2014/project-1-make-a" | stats count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![slackers](images/Q1.png?raw=true)
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+This shows the people who forked the make-1a after 11pm on Sunday night. Slackers!
 
-### Question 2. {{write-the-question}}
+### Question 2. What time did each of these people actually fork?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=class_github_events type="ForkEvent" repo.name="CSCI-4830-002-2014/project-1-make-a" | timechart count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![screenshot of a data table or a graph or both](images/Q2.png?raw=true)
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+This shows the time that each of the said slackers actually forked make-1a.
 
-### Question 3. {{write-the-question}}
+### Question 3. What time do our teachers push new events out?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=class_github_events type="PushEvent" | timechart count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![screenshot of a data table or a graph or both](images/Q3.png?raw=true)
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+This graph shows when both Tom and Michael push new events out. Tom works very early in the morning, Michael works late at night.
+
