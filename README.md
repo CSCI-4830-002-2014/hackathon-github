@@ -1,10 +1,6 @@
 # Team Members
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Justin McBride](https://github.com/dare599z)
 
 # Objective 1. Node.js
 
@@ -14,37 +10,37 @@
 
 ### 2.a. What is the distribution of push requests over Github accounts?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=new_github type="PushEvent" | stats count by actor.login
 ```
 ![screenshot of a data table or a graph or both](image.png?raw=true) 
 
 ### 2.b. How are different event types compared over time for the whole class?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=new_github | stats dc(type) by actor.login
 ```
 ![screenshot of a data table or a graph or both](image.png?raw=true) 
 
 ### 2.c. Who had the most number of pull request events?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=new_github type="PullRequestEvent" | top actor.login limit=1
 ```
 ![screenshot of a data table or a graph or both](image.png?raw=true) 
 
 ### 2.d. How many different kinds of pull request actions were made?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=new_github type="PullRequestEvent" | stats by payload.action
 ```
 ![screenshot of a data table or a graph or both](image.png?raw=true) 
 
 ### 2.e. What is the distribution of opened pull requests over Github accounts?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=new_github type="PullRequestEvent" payload.action="opened" | stats by actor.login
 ```
 ![screenshot of a data table or a graph or both](image.png?raw=true) 
 
 ### 2.f. What is the submission pattern (i.e., pull requests) of the "Week 2 challenge" over time?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype=new_github repo.name="CSCI-4830-002-2014/challenge-week-2" | timechart count by type
 ```
 ![screenshot of a data table or a graph or both](image.png?raw=true) 
 
