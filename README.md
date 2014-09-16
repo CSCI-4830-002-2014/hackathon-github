@@ -13,15 +13,15 @@
 
 ### 2.a. What is the distribution of push requests over Github accounts?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="big_data_events" type="PushEvents"| stats count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![Image](2a.png?raw=true) 
 
 ### 2.b. How are different event types compared over time for the whole class?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="big_data_events" | timechart count by type
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![Image](2b.png?raw=true) 
 
 ### 2.c. Who had the most number of pull request events?
 ```
