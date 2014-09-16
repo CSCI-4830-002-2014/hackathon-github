@@ -43,9 +43,9 @@ sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload
 
 ### 2.f. What is the submission pattern (i.e., pull requests) of the "Week 2 challenge" over time?
 ```
-{{splunk query producing the table or graph below}}
+{{sourcetype="hackathon3" "repo.url"="https://api.github.com/repos/CSCI4830-002-2014/challenge-week-2" "type"="PullRequestEvenet" | timechart count }}
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true) 
+![screenshot of a data table or a graph or both](2f.png?raw=true) 
 
 
 # Objective 3. Analzye Week 3
@@ -56,7 +56,7 @@ sourcetype="course_events_data" type="PullRequestEvent" | stats count by payload
 ```
 ![screenshot of a data table or a graph or both](question1.png?raw=true) 
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+Mike has the most issue events, which makes sense. Indisquidge had a lot as well. It's interesting to see the various contributions/questions asked.
 
 ### Question 2. Who was the most active in commenting?
 ```
@@ -64,7 +64,7 @@ sourcetype="course_events_data" type="IssueCommentEvent" | stats count by actor.
 ```
 ![Image](https://dl.dropboxusercontent.com/u/44502811/Big%20Data%20ScreenShots/Hack%203/3a.png) 
 
-{{ write-one-or-two-sentences-to-discuss-the-answer}}
+The commenters were similar to the issue events, except now professor Yeh is a leader, and alne has made quite a few contributions.
 
 ### Question 3. When are most people starting their homework(forking)?
 ```
