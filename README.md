@@ -13,39 +13,39 @@
 
 ### 2.a. What is the distribution of push requests over Github accounts?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_github_events" type=PushEvent | stats count by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![screenshot of a data table or a graph or both](images/2a.png?raw=true)
 
 ### 2.b. How are different event types compared over time for the whole class?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_github_events" | timechart count by type
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![screenshot of a data table or a graph or both](images/2b.png?raw=true)
 
 ### 2.c. Who had the most number of pull request events?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_github_events" type="PullRequestEvent" | top actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![screenshot of a data table or a graph or both](images/2c.png?raw=true)
 
 ### 2.d. How many different kinds of pull request actions were made?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_github_events" type="PullRequestEvent" | stats count by payload.action
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![screenshot of a data table or a graph or both](images/2d.png?raw=true)
 
 ### 2.e. What is the distribution of opened pull requests over Github accounts?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_github_events" type="PullRequestEvent" | stats count(payload.action) by actor.login
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![screenshot of a data table or a graph or both](images/2e.png?raw=true)
 
 ### 2.f. What is the submission pattern (i.e., pull requests) of the "Week 2 challenge" over time?
 ```
-{{splunk query producing the table or graph below}}
+sourcetype="course_github_events" type="PullRequestEvent" repo.name="CSCI-4830-002-2014/challenge-week-2" | timechart count
 ```
-![screenshot of a data table or a graph or both](image.png?raw=true)
+![screenshot of a data table or a graph or both](images/2f.png?raw=true)
 
 
 # Objective 3. Analzye Week 3
